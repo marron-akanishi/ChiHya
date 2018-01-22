@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChiHya"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="ChiHya" Height="100" Width="255" WindowStyle="None" Background="#FF727272" WindowStartupLocation="CenterScreen" AllowsTransparency="True" ResizeMode="NoResize" Topmost="True" Opacity="0.6">
     <Grid>
-        
+        <Rectangle x:Name="Handle" Fill="#00AAAAAA" Grid.ZIndex="1" Cursor="SizeAll" />
+        <Label x:Name="Title" Content="タイトル" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="26" Foreground="White" FontFamily="Meiryo UI"/>
+        <Label x:Name="Artist" Content="アーティスト" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Height="26" Foreground="White" FontFamily="Meiryo UI"/>
+        <Grid x:Name="Controler" Grid.ZIndex="2">
+            <Button x:Name="PlayButton" Content="開始" HorizontalAlignment="Left" Margin="10,67,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="PlayButton_Click"/>
+            <Button x:Name="MiniButton" Content="最小化" HorizontalAlignment="Left" Margin="90,67,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
+            <Button x:Name="CloseButton" Content="終了" HorizontalAlignment="Left" Margin="170,67,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
+        </Grid>
+        <MediaElement x:Name="Player" HorizontalAlignment="Left" Height="0" Margin="0,0,0,0" VerticalAlignment="Top" Width="0" Visibility="Hidden" LoadedBehavior="Manual"/>
     </Grid>
 </Window>
